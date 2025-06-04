@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Helping  all typing payment refund related complain issue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Colour Variables for Reusability */
+    :root {
+        --bg-colour: #0EF31A;
+        --font-colour: #EF0F47;
+        --button-colour: #EF5910;
+        --icon-colour: #f0f0f0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding-bottom: 50px; /* Increased padding to add more space at the bottom */
+        background-color: var(--bg-colour);
+    }
+
+    .profile {
+        max-width: 450px; /* Limit the width of the profile for readability */
+        margin: 15px auto; /* Center the profile and add space at the top */
+         padding: 20px 20px 0 20px; /* Remove bottom padding */
+        background-color: var(--bg-colour);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* Box shadow only on larger screens */
+    @media (min-width: 600px) {
+        .profile {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    }
+    
+  .hero {
+    position: relative;
+    width: 100%;
+    padding-top: 40%; /* Set the aspect ratio to 2.5:1 for the header image */
+    border-radius: 10px;
+    overflow: hidden;
+    background: url("https://ioecfuztemhxovsxihed.supabase.co/storage/v1/object/public/user_files/1748322897531_image_cropper_1748322031515.jpg") no-repeat center center;
+    background-size: cover;
+    margin-top: 0px; /* Add space between the top of the page and the hero image */
+    margin-bottom: 20px; /* Ensure consistent space below hero image */
+    z-index: 1; /* Place the hero section below the personal image */
+}
+
+.hero-placeholder {
+    width: 100%;
+    padding-top: 40%; /* Maintain aspect ratio for placeholder */
+    margin-bottom: 20px; /* Ensure consistent space below hero placeholder */
+}
+
+.personal-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular frame for personal image */
+    margin: -60px auto 20px; /* Adjust spacing below personal image */
+    display: block;
+    border: 2px solid var(--bg-colour); /* Border around the personal image */
+    background: url("https://ioecfuztemhxovsxihed.supabase.co/storage/v1/object/public/user_files/1748322898331_image_cropper_1748322881297.jpg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    z-index: 2; /* Ensure personal image appears above the hero image */
+}
+
+
+    .profile-info {
+        text-align: center; /* Center align all profile information */
+        padding: 0 10px 5px 10px;
+        color: var(--font-colour);
+    }
+
+    .profile-info h1 {
+        margin: 0px 0 5px;
+        font-size: 1.8em; /* Slightly increase font size for the name */
+        font-weight: normal; /* Make the name non-bold */
+    }
+
+    .profile-info h2, .profile-info h3 {
+        margin: 5px 0;
+        color: var(--font-colour);
+        font-size: 1em;
+ font-weight: normal; /* Make the name non-bold */
+    }
+
+    .details {
+        padding: 20px;
+    }
+
+    .section {
+    /*  margin-bottom: 30px;  Add space between sections */
+    }
+
+    .section-title {
+        font-size: 1em;
+        margin-bottom: 15px;
+        font-weight: normal; /* Section title remains bold */
+        color: var(--font-colour);
+    }
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: var(--font-colour);
+ font-weight: normal;
+}
+
+.contact-detail i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Circle size */
+    height: 30px; /* Equal height and width for a circle */
+    border-radius: 50%; /* Circular shape */
+    background-color: var(--button-colour); /* Circle background colour */
+    color: var(--icon-colour); /* Icon colour */
+    font-size: 16px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+
+ /* Add this to keep the circle from shrinking */
+    flex-shrink: 0;
+}
+
+    .contact-detail a {
+        color: var(--font-colour);
+        text-decoration: none;
+    }
+
+    .contact-detail a:hover {
+        text-decoration: underline; /* Underline on hover for links */
+    }
+
+    .add-to-contact {
+        position: fixed;
+        bottom: 20px; /* Increased space between button and bottom of the page */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--button-colour);
+        color: var(--icon-colour); /* Button text colour */
+        border: none;
+        padding: 18px 30px; /* Slightly increased button height */
+        font-size:1em;
+ font-weight: normal; /* Section title remains bold */
+        border-radius: 5px;
+        cursor: pointer;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-to-contact:hover {
+        opacity: 0.9; /* Slight darkening effect on hover */
+    }
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center align social icons */
+    margin-bottom: 10px;
+margin-top: 20px;
+        gap: 15px; /* Space between social icons */
+    }
+
+    .social-icon i {
+        font-size: 24px; /* Icon size */
+        color: var(--button-colour); /* Icon colour matches button colour */
+        transition: color 0.3s; /* Smooth color transition */
+    }
+
+    .social-icon:hover i {
+        opacity: 0.9; /* Slight darkening on hover */
+    }
+
+    .profile-info p {
+        font-size: 0.9em; /* Font size for profile headline */
+    }
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+ <div class="profile-preview-wrapper"><!-- 1) Wrap .profile in a new div -->
+
+    <div class="profile">
+        
+        <!-- Hero Image Section or Placeholder if Hidden -->
+         <!-- Check if header_image in templateDetails is set to 1 -->
+            <div class="hero"></div> <!-- Hero image section shown if header_image is 1 -->
+         <!-- End of Hero Image Section -->
+
+        
+        <!-- Show personal image if personal_image in templateDetails is set to 1 -->
+         <!-- Check if personal_image in templateDetails is set to 1 -->
+            <div class="personal-image"></div> <!-- Personal image section shown if personal_image is 1 -->
+         <!-- End of Personal Image Section -->
+        
+        <!-- Profile Info Section -->
+        <div class="profile-info">
+            
+            
+                <h1>Customer Helping  all typing payment refund related complain issue</h1> <!-- Using to render HTML tags properly -->
+            
+
+           
+
+            
+
+ 
+
+            
+
+ 
+
+
+        </div>
+
+        
+
+        <div class="details">
+            <!-- Contacts Section -->
+            
+            <div class="section">
+            
+                
+                
+
+                 
+                <div class="contact-detail">
+                    <i class="fas fa-mobile-alt"></i> <a href="tel:8789516396">8789516396</a>
+                </div>
+                
+
+                
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i> <a href="tel:8789516396">8789516396</a>
+                </div>
+                
+
+               
+
+                
+                
+                
+            </div>
+            
+
+            <!-- Address Section -->
+            
+        </div>
+
+        <button class="add-to-contact" onclick="generateAndDownloadVCard()">Add to Contact</button>
+    </div>
+</div>
+
+<script>
+
+function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name); // Return the value of the specified parameter
+}
+</script>
+
+
+    <script>
+        async function generateAndDownloadVCard() {
+
+ // Check if in preview mode
+    const viewMode = getURLParameter('view');
+    if (viewMode === 'preview') {
+        console.log('Add to Contact button disabled in preview mode.');
+        return; // Do nothing in preview mode
+    }
+            try {
+                console.log('Add to Contact button clicked');
+                
+                let urlVar = '';
+                console.log('Card URL var:', urlVar);
+
+                if (urlVar && urlVar.trim() !== '') {
+                    console.log('Using card_url_var for vCard generation:', urlVar);
+                } else {
+                    console.log('Card URL var is missing or empty. Trying qr_sharing instead.');
+                    const qrSharing = 'MzkzNXwxNDI0ODU1ODMx';
+                    console.log('QR Sharing:', qrSharing);
+
+                    if (qrSharing && qrSharing.trim() !== '') {
+                        console.log('Using qr_sharing for vCard generation:', qrSharing);
+                        urlVar = qrSharing;
+                    } else {
+                        console.error('Both Card URL var and QR Sharing are missing or empty');
+                        return;
+                    }
+                }
+
+                const response = await fetch(`/generate-vcard?id=${encodeURIComponent(urlVar)}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+
+                const blob = await response.blob();
+                const downloadUrl = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = downloadUrl;
+                a.download = 'Customer Helping _all typing payment refund related complain issue.vcf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(downloadUrl);
+
+                console.log('vCard downloaded successfully');
+
+            } catch (error) {
+                console.error('Error occurred:', error);
+            }
+        }
+    </script>
+    <script>
+        // Log the current state of key user image and colour variables for debugging
+        console.log('User Hero Image URL:', 'https://ioecfuztemhxovsxihed.supabase.co/storage/v1/object/public/user_files/1748322897531_image_cropper_1748322031515.jpg');
+        console.log('User Personal Image URL:', 'https://ioecfuztemhxovsxihed.supabase.co/storage/v1/object/public/user_files/1748322898331_image_cropper_1748322881297.jpg');
+        console.log('User Background Colour:', '#0EF31A');
+        console.log('User Button Colour:', '#EF5910');
+
+        // New variables to check visibility flags for Hero and Personal Image sections
+        console.log('Header Image Visibility (header_image):', 1); // Logs value of header_image
+        console.log('Personal Image Visibility (personal_image):', 1); // Logs value of personal_image
+    </script>
+
+<script>
+    // Disable all links if "view=preview" is in the URL
+    document.addEventListener('DOMContentLoaded', () => {
+        const viewMode = getURLParameter('view');
+        if (viewMode === 'preview') {
+            console.log('Preview mode detected. Disabling all links.');
+
+            // Select all links and disable their default behaviour
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent the link from navigating
+                    console.log(`Link disabled: ${link.href}`);
+                });
+            });
+        }
+    });
+</script>
+
+ <!-- FIXES THE SIZE TO SUIT THE IN APP MOBILE PREVIEW -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const viewMode = new URLSearchParams(window.location.search).get('view');
+  if (viewMode === 'previewDesktop') {
+    console.log('Preview mode: fixed height + always scrollbar for consistent width.');
+
+
+ // Select all links and disable their default behaviour
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent the link from navigating
+                    console.log(`Link disabled: ${link.href}`);
+                });
+            });
+
+
+
+
+
+    const styleElement = document.createElement('style');
+    styleElement.innerHTML = `
+      body {
+        background: transparent !important;
+      }
+
+      .profile-preview-wrapper {
+        /* FIXED SIZE: The container is always 320px wide, 620px tall ===========================================================*/
+        width: 320px !important;
+        height: 560px !important;
+        margin: 0 auto !important;
+
+        background: transparent !important;
+        border-radius: 20px !important;
+
+        /* ALWAYS SHOW SCROLLBAR */
+        overflow-y: scroll !important;
+        /* if you want no horizontal scrolling, add: */
+        overflow-x: hidden !important;
+
+        /* If you need a bit of a bottom gap, add padding-bottom here */
+      }
+
+      @media (max-width: 9999px) {
+        .profile {
+          max-width: 320px !important;
+          margin: 0 auto !important;
+          border-radius: 20px !important;
+          background-color: var(--bg-colour) !important;
+       /*   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;  */
+          /* Add some top padding if you want the hero further down */
+          padding-top: 30px !important;
+        }
+
+        .hero {
+          /* Adjust hero height ratio as usual */
+          padding-top: 45% !important;
+        }
+
+        .personal-image {
+          width: 100px !important;
+          height: 100px !important;
+          margin: -50px auto 20px !important;
+        }
+
+        /* Text sizes */
+        .profile-info h1 {
+          font-size: 1.5em !important;
+        }
+        .profile-info h2, .profile-info h3 {
+          font-size: 1em !important;
+        }
+        .profile-info p {
+          font-size: 0.9em !important;
+        }
+
+        /* Button sizing */
+        .link-button {
+          font-size: 1em !important;
+          padding: 12px !important;
+        }
+      }
+    `;
+    document.head.appendChild(styleElement);
+  }
+});
+</script>
+
+
+</body>
+</html>
