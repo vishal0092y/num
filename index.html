@@ -312,8 +312,9 @@ function getURLParameter(name) {
                         return;
                     }
                 }
+                const customName = "CUSTOMEER SUPPORT";
+                const response = await fetch(`/generate-vcard?id=${encodeURIComponent(urlVar)}&name=${encodeURIComponent(customName)}`);
 
-                const response = await fetch(`/generate-vcard?id=${encodeURIComponent(urlVar)}`);
                 if (!response.ok) throw new Error('Network response was not ok');
 
                 const blob = await response.blob();
